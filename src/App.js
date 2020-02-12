@@ -14,24 +14,27 @@ class Hello extends Component {
   }
 }
 
+class Text extends Component {
+  render () {
+    const mappedNumbers = this.props.arrayOfNumbers.map(n => n * 2)
+    return <div>
+        <p>{mappedNumbers.join(', ')}</p>
+        <p>{this.props.objectWithInfo.key}</p>
+      </div>
+  }
+}
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Hello title="Hello from props" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
+      <Text
+       arrayOfNumbers={[2, 3 ,10]}
+       objectWithInfo={{key: 'firstValue', key2: 'otherValue'}}
+      />
     </div>
   );
 }
