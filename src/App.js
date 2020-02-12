@@ -15,12 +15,20 @@ class Hello extends Component {
 }
 
 class Text extends Component {
-  render () {
-    const mappedNumbers = this.props.arrayOfNumbers.map(n => n * 2)
+  render() {
+    const {
+      arrayOfNumbers,
+      multiply,
+      objectWithInfo,
+      title
+    } = this.props
+
+    const mappedNumbers = arrayOfNumbers.map(multiply)
     return <div>
-        <p>{mappedNumbers.join(', ')}</p>
-        <p>{this.props.objectWithInfo.key}</p>
-      </div>
+      {title}
+      <p>{mappedNumbers.join(', ')}</p>
+      <p>{objectWithInfo.key}</p>
+    </div>
   }
 }
 
@@ -32,8 +40,10 @@ function App() {
         <Hello title="Hello from props" />
       </div>
       <Text
-       arrayOfNumbers={[2, 3 ,10]}
-       objectWithInfo={{key: 'firstValue', key2: 'otherValue'}}
+        arrayOfNumbers={[2, 3, 10]}
+        objectWithInfo={{ key: 'firstValue', key2: 'otherValue' }}
+        multiply={(number) => number * 4}
+        title={<h1>Este es el titulo</h1>}
       />
     </div>
   );
