@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Hello title="Hello from prop1" />
+        <Hello title="Hello from props" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
