@@ -8,7 +8,7 @@ import './App.css';
 
 // const Hello = (props) => <h2>{props.title}</h2>;
 
-class Hello extends Component {
+/* class Hello extends Component {
   render() {
     return <h2>{this.props.title}</h2>
   }
@@ -32,7 +32,27 @@ class Text extends Component {
     </div>
   }
 }
+*/
 
+class Title extends Component {
+  render(){
+    return <h1>{this.props.text}</h1>
+  }
+}
+
+Title.defaultProps = {
+  text: 'Titulo por defecto'
+}
+class App extends Component {
+    render(){
+      return (
+        <div className="App">
+          <Title text="Otro titulo desde props" />
+        </div>
+      );
+    }
+}
+/*
 function App() {
   return (
     <div className="App">
@@ -49,5 +69,5 @@ function App() {
     </div>
   );
 }
-
+*/
 export default App;
