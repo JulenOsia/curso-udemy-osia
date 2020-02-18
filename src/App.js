@@ -2,72 +2,24 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-//function Hello (props){
-//  return <h2>{props.title}</h2>
-//}
-
-// const Hello = (props) => <h2>{props.title}</h2>;
-
-/* class Hello extends Component {
-  render() {
-    return <h2>{this.props.title}</h2>
+class Contador extends Component{
+  constructor(){
+    super()
+    this.state = {contador: 1}
   }
-}
-
-class Text extends Component {
-  render() {
-    const {
-      arrayOfNumbers,
-      multiply,
-      objectWithInfo
-    } = this.props
-
-    // this.props.title = <h3>Otra cosa</h3> Error, no es una funcion pura
-
-    const mappedNumbers = arrayOfNumbers.map(multiply)
-    return <div>
-      {this.props.title}
-      <p>{mappedNumbers.join(', ')}</p>
-      <p>{objectWithInfo.key}</p>
-    </div>
-  }
-}
-*/
-
-class Title extends Component {
   render(){
-    return <h1>{this.props.text}</h1>
+    return <span>{this.state.contador}</span>
   }
-}
-
-Title.defaultProps = {
-  text: 'Titulo por defecto'
 }
 class App extends Component {
     render(){
       return (
         <div className="App">
-          <Title text="Otro titulo desde props" />
+          <p>Primer componente con state</p>
+          <Contador />
         </div>
       );
     }
 }
-/*
-function App() {
-  return (
-    <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Hello title="Hello from props" />
-      </div>
-      <Text
-        arrayOfNumbers={[2, 3, 10]}
-        objectWithInfo={{ key: 'firstValue', key2: 'otherValue' }}
-        multiply={(number) => number * 4}
-        title={<h1>Este es el titulo</h1>}
-      />
-    </div>
-  );
-}
-*/
+
 export default App;
