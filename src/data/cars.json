@@ -1,0 +1,22 @@
+[
+{
+    "id": "efe1a0cd-8353-4ba0",
+    "name": "A3",
+    "company": "Audi"
+},
+{
+    "id": "9b9048ec-fff8-4bc5",
+    "name": "Mondeo",
+    "company": "Ford"
+},
+{
+    "id": "f447e8a1-26a2-4e3a",
+    "name": "Megane",
+    "company": "Renault"
+},
+{
+    "id": "52f1c5b7-14b5-41c0",
+    "name": "A200",
+    "company": "Mercedes"
+}
+]
