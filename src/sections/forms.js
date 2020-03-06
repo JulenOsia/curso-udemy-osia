@@ -8,13 +8,18 @@ export default class Forms extends Component {
         console.log({ name, email })
     }
 
-    render () {
+    handleChange(e) {
+        console.log('handleChange')
+        console.log(e.target.checked)
+    }
+
+    render() {
         return (
             <div>
                 <h4>Formularios</h4>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <p>
-                        <label htmlFor='name'>Nombre: </label> 
+                        <label htmlFor='name'>Nombre: </label>
                         <input
                             id='name'
                             name='userName'
@@ -28,8 +33,13 @@ export default class Forms extends Component {
                             name='twitterAccount'
                             placeholder='Introduce tu Twitter' />
                     </p>
-                    
-                    <button onClick={this.handleClick}>Enviar</button>
+                    <p>
+                        <label>
+                            <input onChange={this.handleChange} type='checkbox' />
+                            Accepted terms
+                        </label>
+                    </p>
+                    <button>Enviar</button>
                 </form>
             </div>
         )
