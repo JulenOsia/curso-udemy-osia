@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 export default class Forms extends Component {
-    handleClick (e) {
+    handleClick = (e) => {
         e.preventDefault()
-        const name = document.getElementById('name').value
+        const name = this.inputName.value
         const email = document.getElementById('twitter').value
         console.log({ name, email })
     }
@@ -13,13 +13,13 @@ export default class Forms extends Component {
             <div>
                 <h4>Formularios</h4>
                 <form>
-                    
                     <p>
                         <label htmlFor='name'>Nombre: </label> 
                         <input
                             id='name'
                             name='userName'
-                            placeholder='Introduce el nombre' />
+                            placeholder='Introduce el nombre'
+                            ref={inputElement => this.inputName = inputElement} />
                     </p>
                     <p>
                         <label>Twitter:</label>
@@ -28,6 +28,7 @@ export default class Forms extends Component {
                             name='twitterAccount'
                             placeholder='Introduce tu Twitter' />
                     </p>
+                    
                     <button onClick={this.handleClick}>Enviar</button>
                 </form>
             </div>
